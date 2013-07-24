@@ -1,0 +1,31 @@
+<h1>My show page</h1>
+<%=link_to 'BACK',posts_path%>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Message</th>
+	</tr>
+	<tr>
+		<td><%=@post.title%></td>
+		<td><%=@post.message%></td>
+	</tr>
+</table>
+<h3> ADD COMMENTS</h3>
+<%= form_for([ @post, @post.comments.build ]) do |f| %>
+<table>
+	<tr>
+		<td><%= f.label :Commentor%></td>
+		<td><%= f.text_field :commentor%></td>
+	</tr>
+	<tr>
+		<td><%= f.label :Body%></td>
+		<td><%= f.text_area :body%></td>
+	</tr>
+	<tr>
+		<td><%=f.submit%></td>
+	</tr>
+
+</table>
+<% end %>
+
+	

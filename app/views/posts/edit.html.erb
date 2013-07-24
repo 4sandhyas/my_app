@@ -1,0 +1,15 @@
+<%=form_for :post,url: post_path(@post.id),method: :patch do |f|%>
+<table>
+	<tr>
+		<td><%=f.label :Title%></td>
+		<td><%=f.text_field :title%></td>
+	</tr>
+	<tr>
+		<td><%=f.label :Message%></td>
+		<td><%=f.text_area :message%></td>
+	</tr>
+	<tr>
+		<td><%=f.submit%></td>
+	</tr>
+</table>
+<% end %>
